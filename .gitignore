@@ -1,0 +1,4 @@
+variables.env
+vendor/
+go.mod
+go.sum

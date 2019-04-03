@@ -1,0 +1,15 @@
+database:
+  image: mysql:5.6
+  environment:
+    MYSQL_ROOT_PASSWORD: db_password
+web:
+  build: .
+  links:
+    - database
+  ports:
+    - "7070:7070"
+  environment:
+    DATABASE_USER: "db_user"
+    DATABASE_PASS: "db_password"
+    DATABASE_HOST: "database:3306"
+    ENVIRONMENT: "Production"
